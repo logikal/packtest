@@ -5,7 +5,7 @@ trigger:
   type: core.st2.webhook
   parameters:
     url: github
-constraints:
+criteria:
   trigger.headers['X-GitHub-Event']:
     type: 'eq'
     pattern: 'push'
