@@ -4,10 +4,10 @@
       name: pending
       ref: github.add_status
       params:
-        repo: '{{name}}'
-        sha: '{{sha}}'
+        repo: '{{action_context.name}}'
+        sha: '{{action_context.sha}}'
         state: pending
-        user: '{{user}}'
+        user: '{{action_context.user}}'
       on-success: wait
     - name: wait
       ref: core.local
@@ -17,7 +17,7 @@
     - name: succeed
       ref: github.add_status
       params:
-        repo: '{{name}}'
-        sha: '{{sha}}'
+        repo: '{{action_context.name}}'
+        sha: '{{action_context.sha}}'
         state: success
-        user: '{{user}}'
+        user: '{{action_context.user}}'
