@@ -1,0 +1,26 @@
+---
+# Action definition metadata
+name: "run_unit_tests"
+description: "Simple Action Chain workflow"
+
+# `runner_type` has value `action-chain` to identify that action is an ActionChain.
+runner_type: "action-chain"
+
+# `entry_point` path to the ActionChain definition file, relative to the pack's action directory.
+entry_point: "chains/run_unit_tests.yaml"
+
+enabled: true
+
+parameters:
+  name:
+    type: "string"
+    description: "Name of the repository"
+    required: true
+  user:
+    type: "string"
+    description: "Name of the owner of the repository"
+    required: true
+  sha:
+    type: "string"
+    description: "sha to run tests for"
+    required: true

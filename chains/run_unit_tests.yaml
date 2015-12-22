@@ -1,0 +1,23 @@
+---
+  chain:
+    -
+      name: pending
+      ref: github.add_status
+      params:
+        repo: '{{name}}'
+        sha: '{{sha}}'
+        state: pending
+        user: '{{user}}'
+      on-success: wait
+    - name: wait
+      ref: core.local
+      params:
+        cmd: sleep 5
+      on-success: succeed
+    - name: succeed
+      ref: github.add_status
+      params:
+        repo: '{{name}}'
+        sha: '{{sha}}'
+        state: success
+        user: '{{user}}'

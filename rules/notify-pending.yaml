@@ -7,9 +7,8 @@ trigger:
   parameters:
     url: github
 action:
-  ref: github.add_status
+  ref: packtest.run_unit_tests
   parameters:
     repo: '{{trigger.body.repository.name}}'
     sha: '{{trigger.body.pull_request.head.sha}}'
-    state: pending
     user: '{{trigger.body.repository.owner.login}}'
