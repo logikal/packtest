@@ -1,0 +1,8 @@
+name: packtest
+description: Our test of packs
+keywords:
+    - sendgrid
+    - packtest
+version: 0.1
+author: shelf
+email: shelf@sendgrid.com

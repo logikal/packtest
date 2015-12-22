@@ -1,0 +1,14 @@
+name: notify-pending
+pack: packtest
+description: Update status to pending on PR
+trigger:
+  type: core.st2.webhook
+  parameters:
+    url: github
+action:
+  ref: github.add_status
+  parameters:
+    repo: '{{trigger.body.repository.name}}'
+    sha: '{{trigger.body.pull_request.head.sha}}'
+    state: pending
+    user: '{{trigger.body.repository.owner.login}}'
