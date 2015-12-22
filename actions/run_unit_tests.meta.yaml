@@ -12,7 +12,7 @@ entry_point: "chains/run_unit_tests.yaml"
 enabled: true
 
 parameters:
-  name:
+  repo:
     type: "string"
     description: "Name of the repository"
     required: true
