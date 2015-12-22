@@ -1,4 +1,4 @@
-name: notify-pending
+name: run_unit_tests_on_pull_request
 pack: packtest
 description: Update status to pending on PR
 enabled: true
