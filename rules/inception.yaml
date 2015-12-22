@@ -7,9 +7,6 @@ trigger:
   parameters:
     url: github
 criteria:
-  trigger.headers['X-GitHub-Event']:
-    type: 'eq'
-    pattern: 'push'
   trigger.body.ref:
     type: 'eq'
     pattern: 'refs/heads/master'
