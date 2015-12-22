@@ -4,7 +4,7 @@ description: Update status to pending on PR
 trigger:
   type: core.st2.webhook
   parameters:
-    url: github
+    url: oh-hai-github
 action:
   ref: github.add_status
   parameters:
