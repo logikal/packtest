@@ -1,6 +1,7 @@
 name: notify-pending
 pack: packtest
 description: Update status to pending on PR
+enabled: true
 trigger:
   type: core.st2.webhook
   parameters:
