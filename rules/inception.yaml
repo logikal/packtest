@@ -19,5 +19,6 @@ action:
   ref: packs.install
   parameters:
     register: all
-    packs: packtest
+    packs:
+      - packtest
     repo_url: '{{trigger.body.repository.full_name}}'
