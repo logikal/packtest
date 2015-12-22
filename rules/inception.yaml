@@ -1,6 +1,7 @@
 name: inception
 pack: packtest
 description: Update myself when I am updated.
+enabled: true
 trigger:
   type: core.st2.webhook
   parameters:
