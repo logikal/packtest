@@ -14,5 +14,5 @@ action:
   ref: packtest.run_unit_tests
   parameters:
     repo: '{{trigger.body.repository.name}}'
-    sha: '{{trigger.body.pull_request.head.sha}}'
+    sha: '{{trigger.body.comment.commit_id}}'
     user: '{{trigger.body.repository.owner.login}}'
