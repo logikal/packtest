@@ -1,0 +1,12 @@
+name: build_jobs
+pack: packtest
+description: Build jobs for lazy developers.
+enabled: true
+trigger:
+  type: core.st2.webhook
+  parameters:
+    url: build-jobs
+action:
+  ref: core.local
+  parameters:
+    cmd: echo "building job {{trigger.body.job.name}}"
