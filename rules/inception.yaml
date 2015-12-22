@@ -1,0 +1,23 @@
+name: inception
+pack: packtest
+description: Update myself when I am updated.
+trigger:
+  type: core.st2.webhook
+  parameters:
+    url: github
+constraints:
+  trigger.headers['X-GitHub-Event']:
+    type: 'eq'
+    pattern: 'push'
+  trigger.body.ref:
+    type: 'eq'
+    pattern: 'refs/heads/master'
+  trigger.body.repository.full_name:
+    type: 'eq'
+    pattern: 'partkyle-test/packtest'
+action:
+  ref: packs.install
+  parameters:
+    register: all
+    packs: packtest
+    repo_url: '{{trigger.body.repository.full_name}}'
