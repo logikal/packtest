@@ -12,7 +12,7 @@ criteria:
     pattern: 'refs/heads/master'
   trigger.body.repository.full_name:
     type: 'eq'
-    pattern: 'partkyle-test/packtest'
+    pattern: 'logikal/packtest'
 action:
   ref: packs.install
   parameters:
@@ -24,4 +24,4 @@ notify:
   on-complete:
     message: "\"@channel: Action succeeded.\""
     routes:
-      - "hipchat"
+      - "slack"
