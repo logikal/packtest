@@ -27,4 +27,6 @@ notify:
   on-complete:
     message: "\"@channel: Packtest deploy succeeded.\""
     routes:
+      - "slack"
+    channels:
       - "hubotcontrol"
