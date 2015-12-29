@@ -11,20 +11,20 @@ entry_point: "chains/inception.yaml"
 
 enabled: true
 parameters:
-	repo:
-		type: "string"
-		description: "Name of the repository"
-		required: true
-	user:
-		type: "string"
-		description: "Name of the owner of the repository"
-		required: true
-	sha:
-		type: "string"
-		description: "sha to update status for"
-		required: true
+  repo:
+    type: "string"
+    description: "Name of the repository"
+    required: true
+  user:
+    type: "string"
+    description: "Name of the owner of the repository"
+    required: true
+  sha:
+    type: "string"
+    description: "sha to update status for"
+    required: true
 notify:
-	on-complete:
-		message: "\"@channel: Packtest deploy succeeded.\""
-		routes:
-			- "slack"
+  on-complete:
+    message: "\"@channel: Packtest deploy succeeded.\""
+    routes:
+      - "slack"

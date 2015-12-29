@@ -1,20 +1,20 @@
 ---
-	chain:
-		-
-			name: "deploy_packs"
-			ref: packs.install
-			params:
-				register: all
-				packs:
-					- packtest
-				repo_url: '{{user}}/{{repo}}'
-			on-success: "gh_deploy_status_success"
-		-
-			name: gh_deploy_status_success
-			ref: github.add_status
-			params:
-				description: 'pack_deployed'
-				repo: '{{repo}}'
-				sha: '{{sha}}'
-				state: success
-				user: '{{user}}'
+  chain:
+    -
+      name: "deploy_packs"
+      ref: packs.install
+      params:
+        register: all
+        packs:
+          - packtest
+        repo_url: '{{user}}/{{repo}}'
+      on-success: "gh_deploy_status_success"
+    -
+      name: gh_deploy_status_success
+      ref: github.add_status
+      params:
+        description: 'pack_deployed'
+        repo: '{{repo}}'
+        sha: '{{sha}}'
+        state: success
+        user: '{{user}}'
