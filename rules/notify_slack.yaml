@@ -1,7 +1,7 @@
 
 ---
     name: "notify_slack"
-    pack: "examples"
+    pack: "packtest"
     description: "Sample rule firing on action completion."
     enabled: true
 
