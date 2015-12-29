@@ -3,20 +3,20 @@ pack: packtest
 description: Update myself when I am updated.
 enabled: true
 trigger:
-  type: core.st2.webhook
-  parameters:
-    url: github
+	type: core.st2.webhook
+	parameters:
+		url: github
 criteria:
-  trigger.body.ref:
-    type: 'eq'
-    pattern: 'refs/heads/master'
-  trigger.body.repository.full_name:
-    type: 'eq'
-    pattern: 'logikal/packtest'
+	trigger.body.ref:
+		type: 'eq'
+		pattern: 'refs/heads/master'
+	trigger.body.repository.full_name:
+		type: 'eq'
+		pattern: 'logikal/packtest'
 action:
-  ref: packs.install
-  parameters:
-    register: all
-    packs:
-      - packtest
-    repo_url: '{{trigger.body.repository.full_name}}'
+	ref: packs.install
+	parameters:
+		register: all
+		packs:
+			- packtest
+		repo_url: '{{trigger.body.repository.full_name}}'
