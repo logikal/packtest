@@ -20,8 +20,3 @@ action:
     packs:
       - packtest
     repo_url: '{{trigger.body.repository.full_name}}'
-notify:
-  on-complete:
-    message: "\"@channel: Action succeeded.\""
-    routes:
-      - "slack"
