@@ -12,6 +12,6 @@ entry_point: "chains/inception.yaml"
 enabled: true
 notify:
   on-complete:
-    message: "\"@channel: Action succeeded.\""
+    message: "\"@channel: deploy succeeded.\""
     routes:
       - "slack"
