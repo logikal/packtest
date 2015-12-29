@@ -3,7 +3,7 @@
     -
       name: "deploy_packs"
       ref: packs.install
-      parameters:
+      params:
         register: all
         packs:
           - packtest
