@@ -10,10 +10,15 @@ runner_type: "action-chain"
 entry_point: "chains/inception.yaml"
 
 enabled: true
-params:
-  pack_repo:
-    default:
-      - "logikal/packtest"
+parameters:
+  repo:
+    type: "string"
+    description: "Name of the repository"
+    required: true
+  user:
+    type: "string"
+    description: "Name of the owner of the repository"
+    required: true
 notify:
   on-complete:
     message: "\"@channel: Packtest deploy succeeded.\""

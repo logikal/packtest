@@ -7,7 +7,7 @@
         register: all
         packs:
           - packtest
-        repo_url: '{{trigger.body.repository.full_name}}'
+        repo_url: '{{user}}/{{repo}}'
       on-success: "gh_deploy_status_success"
     -
       name: gh_deploy_status_success
