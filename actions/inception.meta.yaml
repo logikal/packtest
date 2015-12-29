@@ -29,4 +29,4 @@ notify:
     routes:
       - "slack"
     channels:
-      - "hubotcontrol"
+      - "#hubotcontrol"
