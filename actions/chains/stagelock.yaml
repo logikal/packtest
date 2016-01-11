@@ -1,0 +1,21 @@
+---
+  chain:
+    -
+      name: stagelock_driver
+      ref: core.local
+      params:
+        cmd: "/opt/stackstorm/packs/packtest/actions/stagelock_driver {{action}} {{username}} {{repos}}"
+      on-success: "success_hipchat"
+      on-failure: "failure_hipchat"
+    -
+      name: "success_hipchat"
+      ref: chatops.post_message
+      params:
+        channel: "spt_bot_testing"
+        message: "{{action}} successfully applied to {{repos}} by {{username}}"
+    -
+      name: "failure_hipchat"
+      ref: chatops.post_message
+      params:
+        channel: "spt_bot_testing"
+        message: "{{action}} failed to apply to {{repos}} by {{username}}"

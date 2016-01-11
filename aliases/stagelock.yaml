@@ -1,0 +1,7 @@
+---
+name: "stagelock"
+description: "Unlock, Unlock all, Lock, or Read a list of repos"
+action_ref: packtest.stagelock
+formats:
+  - "stagelock {{action}} {{username}} {{repos}}"
+  - "sl {{action}} {{username}} {{repos}}"

@@ -1,0 +1,36 @@
+---
+# Action definition metadata
+name: "stagelock"
+description: "Lock and unlock repos"
+
+# `runner_type` has value `action-chain` to identify that action is an ActionChain.
+runner_type: "action-chain"
+
+# `entry_point` path to the ActionChain definition file, relative to the pack's action directory.
+entry_point: "chains/stagelock.yaml"
+
+enabled: true
+parameters:
+  skip_notify:
+    default:
+      - stagelock_driver
+      - failure_hipchat
+      - success_hipchat
+  action:
+    type: "string"
+    description: "action to do: unlock, unlock_all, lock, read"
+    required: true
+  repos:
+    type: "string"
+    description: "comma separated list of repos - needed for all but unlock_all"
+    required: false
+  username:
+    type: "string"
+    description: "Username of person locking repo - needed for lock"
+    required: false
+
+notify:
+  on-complete:
+   message: "Action complete!"
+   routes:
+     - "hipchat_announce"
