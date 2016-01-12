@@ -23,8 +23,3 @@ parameters:
     type: "string"
     description: "sha to update status for"
     required: true
-notify:
-  on-complete:
-    message: "\"@channel: Packtest deploy succeeded.\""
-    routes:
-      - "slack"

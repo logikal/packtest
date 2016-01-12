@@ -11,11 +11,6 @@ entry_point: "chains/stagelock.yaml"
 
 enabled: true
 parameters:
-  skip_notify:
-    default:
-      - stagelock_driver
-      - failure_hipchat
-      - success_hipchat
   action:
     type: "string"
     description: "action to do: unlock, unlock_all, lock, read"
@@ -24,13 +19,3 @@ parameters:
     type: "string"
     description: "comma separated list of repos - needed for all but unlock_all"
     required: false
-  username:
-    type: "string"
-    description: "Username of person locking repo - needed for lock"
-    required: false
-
-notify:
-  on-complete:
-   message: "Action complete!"
-   routes:
-     - "hipchat_announce"

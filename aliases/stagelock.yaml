@@ -1,7 +1,11 @@
 ---
-name: "stagelock"
+name: "stagelockalias"
 description: "Unlock, Unlock all, Lock, or Read a list of repos"
 action_ref: packtest.stagelock
 formats:
-  - "stagelock {{action}} {{username}} {{repos}}"
-  - "sl {{action}} {{username}} {{repos}}"
+  - "stagelock {{action}} {{repos}}"
+  - "sl {{action}} {{repos}}"
+ack:
+  format: "roar"
+result:
+  format: "action completed!"

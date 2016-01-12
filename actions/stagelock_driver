@@ -1,26 +1,10 @@
 #!/usr/bin/ruby
-require_relative 'lib/stagelock'
 
+require "json"
 
-#stagelock_driver action user repo1,repo2,repo3
+data = Hash.new
+data[:response] = "oh man something happened"
+data[:success] = true
 
-action = ARGV[0]
-username = ARGV[1]
-repos = ARGV[2]
-redis_hosts = ["redis://127.0.0.1:6379"]
-stagelock = StageLock::Client.new(redis_hosts)
-
-if repos
-  repo_array = repos.split(",")
-end
-
-case action
-when "unlock"
-  stagelock.unlock(repo_array)
-when "unlock_all"
-  stagelock.unlock_all()
-when "lock"
-  stagelock.lock(repo_array, username)
-when "read"
-  stagelock.read(repo_array)
-end
+puts data.to_json
+#raise "aakldsfjakldf"
