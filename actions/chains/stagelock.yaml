@@ -1,7 +1,7 @@
 ---
   chain:
     -
-      name: stagelock_driver
+      name: repolock_driver
       ref: core.local
       params:
-        cmd: "/opt/stackstorm/packs/packtest/actions/stagelock_driver {{action}} {{action_context.parent.api_user}} {{repos}}"
+        cmd: "sudo docker run --rm -e REDIS_HOST=redis --link redis:redis stagelock ./bin/stagelock {{action}} {{action_context.parent.api_user}} repolock::{{environment}}::{{repos}}"

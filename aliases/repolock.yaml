@@ -1,0 +1,11 @@
+---
+name: "repolockalias"
+description: "Unlock, Unlock all, Lock, or Read a list of repos"
+action_ref: packtest.stuff
+formats:
+  - "repolock {{action}} {{repos}} {{environment=staging}}"
+  - "rl {{action}} {{repos}} {{environment=staging}}"
+ack:
+  format: "Attempting {{execution.parameters.action}} against {{execution.parameters.repos}}"
+result:
+  format: "{% if execution.result.tasks[0].result.stdout.success == true %}(cookie){% else %}(fire){% endif %} {{execution.parameters.action}} {% if execution.result.tasks[0].result.stdout.success == true %}successfully{% else %}not{% endif %} applied against {{execution.parameters}} {{execution.parameters.repos}}: {~}{{execution.result.tasks[0].result.stdout.response}}"

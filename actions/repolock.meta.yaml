@@ -1,13 +1,14 @@
 ---
 # Action definition metadata
-name: "stagelock"
+name: "repolock"
 description: "Lock and unlock repos"
+pack: packtest
 
 # `runner_type` has value `action-chain` to identify that action is an ActionChain.
 runner_type: "action-chain"
 
 # `entry_point` path to the ActionChain definition file, relative to the pack's action directory.
-entry_point: "chains/stagelock.yaml"
+entry_point: "chains/repolock.yaml"
 
 enabled: true
 parameters:
@@ -17,5 +18,9 @@ parameters:
     required: true
   repos:
     type: "string"
-    description: "comma separated list of repos - needed for all but unlock_all"
-    required: false
+    description: "comma separated list of repos"
+    required: true
+  environment:
+    type: "string"
+    description: "staging or production"
+    required: true
