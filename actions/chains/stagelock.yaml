@@ -1,7 +1,0 @@
----
-  chain:
-    -
-      name: repolock_driver
-      ref: core.local
-      params:
-        cmd: "sudo docker run --rm -e REDIS_HOST=redis --link redis:redis stagelock ./bin/stagelock {{action}} {{action_context.parent.api_user}} repolock::{{environment}}::{{repos}}"

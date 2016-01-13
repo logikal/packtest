@@ -1,6 +1,6 @@
 ---
 # Action definition metadata
-name: "repolock"
+name: "repolockmeta"
 description: "Lock and unlock repos"
 pack: packtest
 
@@ -23,4 +23,4 @@ parameters:
   environment:
     type: "string"
     description: "staging or production"
-    required: true
+    default: "staging"
