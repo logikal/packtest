@@ -18,3 +18,10 @@
         sha: '{{sha}}'
         state: success
         user: '{{user}}'
+      on-success: "notify_hipchat_success"
+    - 
+      name: notify_hipchat_success
+      ref: packtest.notify_hipchat_status_room
+      params: 
+        message: "# Deploy to {{repo}} by {{user}} for {{sha}} successful"
+        channel: "spt_bot_testing"
